@@ -1,0 +1,464 @@
+{
+  "users": [
+    {
+      "_id": "usr_admin",
+      "name": "Healthcare Admin",
+      "email": "admin@bookadoctor.com",
+      "role": "admin",
+      "phone": "+1 (800) 555-0199",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200",
+      "createdAt": "2026-08-04T08:42:25.207Z",
+      "isActive": true
+    },
+    {
+      "_id": "usr_patient_1",
+      "name": "John Doe",
+      "email": "john.doe@gmail.com",
+      "role": "patient",
+      "phone": "+1 (555) 111-2233",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200",
+      "createdAt": "2026-08-04T08:42:25.207Z",
+      "isActive": true
+    },
+    {
+      "_id": "usr_patient_2",
+      "name": "Sarah Connor",
+      "email": "sarah.connor@gmail.com",
+      "role": "patient",
+      "phone": "+1 (555) 999-8877",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200",
+      "createdAt": "2026-08-04T08:42:25.207Z",
+      "isActive": true
+    },
+    {
+      "_id": "usr_doctor_1",
+      "name": "Dr. Sarah Smith",
+      "email": "dr.smith@bookadoctor.com",
+      "role": "doctor",
+      "phone": "+1 (555) 234-5678",
+      "avatar": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=400",
+      "createdAt": "2026-08-04T08:42:25.207Z",
+      "isActive": true
+    },
+    {
+      "_id": "usr_doctor_2",
+      "name": "Dr. Rajesh Patel",
+      "email": "dr.patel@bookadoctor.com",
+      "role": "doctor",
+      "phone": "+1 (555) 345-6789",
+      "avatar": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=400",
+      "createdAt": "2026-08-04T08:42:25.207Z",
+      "isActive": true
+    },
+    {
+      "_id": "usr_doctor_3",
+      "name": "Dr. Emily Chen",
+      "email": "dr.chen@bookadoctor.com",
+      "role": "doctor",
+      "phone": "+1 (555) 456-7890",
+      "avatar": "https://images.unsplash.com/photo-1594824813566-88855ce78341?auto=format&fit=crop&q=80&w=400",
+      "createdAt": "2026-08-04T08:42:25.207Z",
+      "isActive": true
+    },
+    {
+      "_id": "usr_doctor_4",
+      "name": "Dr. Michael Williams",
+      "email": "dr.williams@bookadoctor.com",
+      "role": "doctor",
+      "phone": "+1 (555) 567-8901",
+      "avatar": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=400",
+      "createdAt": "2026-08-04T08:42:25.207Z",
+      "isActive": true
+    },
+    {
+      "_id": "usr_doctor_5",
+      "name": "Dr. Amanda Foster",
+      "email": "dr.foster@bookadoctor.com",
+      "role": "doctor",
+      "phone": "+1 (555) 678-9012",
+      "avatar": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=400",
+      "createdAt": "2026-08-04T08:42:25.207Z",
+      "isActive": true
+    },
+    {
+      "_id": "usr_doctor_6",
+      "name": "Dr. James Thorne",
+      "email": "dr.thorne@bookadoctor.com",
+      "role": "doctor",
+      "phone": "+1 (555) 789-0123",
+      "avatar": "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=400",
+      "createdAt": "2026-08-04T08:42:25.207Z",
+      "isActive": true
+    }
+  ],
+  "passwords": {
+    "usr_admin": "$2b$10$AbNFUiXNawGe/Abn0n4os.WWHip/T0ENR.4czhxkXjkF75J2cuCsa",
+    "usr_patient_1": "$2b$10$AbNFUiXNawGe/Abn0n4os.EeRZCaNExX5icPjasD6CbmtZ0Wyn9sa",
+    "usr_patient_2": "$2b$10$AbNFUiXNawGe/Abn0n4os.EeRZCaNExX5icPjasD6CbmtZ0Wyn9sa",
+    "usr_doctor_1": "$2b$10$AbNFUiXNawGe/Abn0n4os.RtqQK5co0AnnOFxi0QntdSi/bi3oJGy",
+    "usr_doctor_2": "$2b$10$AbNFUiXNawGe/Abn0n4os.RtqQK5co0AnnOFxi0QntdSi/bi3oJGy",
+    "usr_doctor_3": "$2b$10$AbNFUiXNawGe/Abn0n4os.RtqQK5co0AnnOFxi0QntdSi/bi3oJGy",
+    "usr_doctor_4": "$2b$10$AbNFUiXNawGe/Abn0n4os.RtqQK5co0AnnOFxi0QntdSi/bi3oJGy",
+    "usr_doctor_5": "$2b$10$AbNFUiXNawGe/Abn0n4os.RtqQK5co0AnnOFxi0QntdSi/bi3oJGy",
+    "usr_doctor_6": "$2b$10$AbNFUiXNawGe/Abn0n4os.RtqQK5co0AnnOFxi0QntdSi/bi3oJGy"
+  },
+  "doctors": [
+    {
+      "_id": "doc_1",
+      "userId": "usr_doctor_1",
+      "name": "Dr. Sarah Smith",
+      "email": "dr.smith@bookadoctor.com",
+      "phone": "+1 (555) 234-5678",
+      "avatar": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=400",
+      "specialization": "Cardiology",
+      "qualifications": "MD, FACC - Harvard Medical School",
+      "experienceYears": 14,
+      "consultationFee": 120,
+      "bio": "Senior Interventional Cardiologist specializing in preventive heart health, hypertension management, and non-invasive cardiac imaging.",
+      "hospital": "St. Jude Heart & Vascular Institute",
+      "location": "Boston, MA",
+      "rating": 4.9,
+      "reviewCount": 128,
+      "status": "approved",
+      "availability": [
+        {
+          "day": "Monday",
+          "slots": [
+            "09:00 AM",
+            "10:00 AM",
+            "02:00 PM",
+            "04:00 PM"
+          ]
+        },
+        {
+          "day": "Wednesday",
+          "slots": [
+            "10:00 AM",
+            "11:00 AM",
+            "03:00 PM"
+          ]
+        },
+        {
+          "day": "Friday",
+          "slots": [
+            "09:00 AM",
+            "11:00 AM",
+            "02:00 PM",
+            "05:00 PM"
+          ]
+        }
+      ],
+      "createdAt": "2026-08-04T08:42:25.207Z"
+    },
+    {
+      "_id": "doc_2",
+      "userId": "usr_doctor_2",
+      "name": "Dr. Rajesh Patel",
+      "email": "dr.patel@bookadoctor.com",
+      "phone": "+1 (555) 345-6789",
+      "avatar": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=400",
+      "specialization": "Dermatology",
+      "qualifications": "MD, FAAD - Johns Hopkins University",
+      "experienceYears": 10,
+      "consultationFee": 95,
+      "bio": "Board-certified dermatologist with extensive clinical background in acne treatments, eczema, psoriasis, and pediatric skin conditions.",
+      "hospital": "Apex Skin & Cosmetic Center",
+      "location": "New York, NY",
+      "rating": 4.8,
+      "reviewCount": 94,
+      "status": "approved",
+      "availability": [
+        {
+          "day": "Tuesday",
+          "slots": [
+            "09:00 AM",
+            "11:00 AM",
+            "02:00 PM",
+            "03:00 PM"
+          ]
+        },
+        {
+          "day": "Thursday",
+          "slots": [
+            "10:00 AM",
+            "01:00 PM",
+            "04:00 PM"
+          ]
+        },
+        {
+          "day": "Saturday",
+          "slots": [
+            "10:00 AM",
+            "11:00 AM",
+            "12:00 PM"
+          ]
+        }
+      ],
+      "createdAt": "2026-08-04T08:42:25.207Z"
+    },
+    {
+      "_id": "doc_3",
+      "userId": "usr_doctor_3",
+      "name": "Dr. Emily Chen",
+      "email": "dr.chen@bookadoctor.com",
+      "phone": "+1 (555) 456-7890",
+      "avatar": "https://images.unsplash.com/photo-1594824813566-88855ce78341?auto=format&fit=crop&q=80&w=400",
+      "specialization": "Neurology",
+      "qualifications": "MD, PhD - Stanford Medicine",
+      "experienceYears": 16,
+      "consultationFee": 150,
+      "bio": "Consultant Neurologist specializing in migraine treatment, sleep disorders, neuromuscular disorders, and cognitive assessments.",
+      "hospital": "Pacific Neuroscience Institute",
+      "location": "San Francisco, CA",
+      "rating": 4.95,
+      "reviewCount": 152,
+      "status": "approved",
+      "availability": [
+        {
+          "day": "Monday",
+          "slots": [
+            "10:00 AM",
+            "11:00 AM",
+            "02:00 PM"
+          ]
+        },
+        {
+          "day": "Tuesday",
+          "slots": [
+            "09:00 AM",
+            "02:00 PM",
+            "04:00 PM"
+          ]
+        },
+        {
+          "day": "Thursday",
+          "slots": [
+            "09:00 AM",
+            "11:00 AM",
+            "03:00 PM"
+          ]
+        }
+      ],
+      "createdAt": "2026-08-04T08:42:25.207Z"
+    },
+    {
+      "_id": "doc_4",
+      "userId": "usr_doctor_4",
+      "name": "Dr. Michael Williams",
+      "email": "dr.williams@bookadoctor.com",
+      "phone": "+1 (555) 567-8901",
+      "avatar": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=400",
+      "specialization": "Pediatrics",
+      "qualifications": "MD, FAAP - Columbia University",
+      "experienceYears": 8,
+      "consultationFee": 85,
+      "bio": "Compassionate pediatrician focused on newborn care, childhood immunizations, growth milestones, and pediatric wellness.",
+      "hospital": "Children Medical Care Center",
+      "location": "Chicago, IL",
+      "rating": 4.7,
+      "reviewCount": 65,
+      "status": "pending",
+      "availability": [
+        {
+          "day": "Monday",
+          "slots": [
+            "09:00 AM",
+            "10:00 AM",
+            "11:00 AM"
+          ]
+        },
+        {
+          "day": "Wednesday",
+          "slots": [
+            "02:00 PM",
+            "03:00 PM",
+            "04:00 PM"
+          ]
+        },
+        {
+          "day": "Friday",
+          "slots": [
+            "09:00 AM",
+            "10:00 AM",
+            "02:00 PM"
+          ]
+        }
+      ],
+      "createdAt": "2026-08-04T08:42:25.207Z"
+    },
+    {
+      "_id": "doc_5",
+      "userId": "usr_doctor_5",
+      "name": "Dr. Amanda Foster",
+      "email": "dr.foster@bookadoctor.com",
+      "phone": "+1 (555) 678-9012",
+      "avatar": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=400",
+      "specialization": "Orthopedics",
+      "qualifications": "MS, FRCS - Mayo Clinic Alix School of Medicine",
+      "experienceYears": 12,
+      "consultationFee": 130,
+      "bio": "Orthopedic specialist in sports injuries, knee and hip joint replacements, arthroscopic surgery, and fracture rehabilitation.",
+      "hospital": "Metro Orthopedic & Spine Hospital",
+      "location": "Dallas, TX",
+      "rating": 4.85,
+      "reviewCount": 88,
+      "status": "approved",
+      "availability": [
+        {
+          "day": "Monday",
+          "slots": [
+            "09:00 AM",
+            "11:00 AM",
+            "03:00 PM"
+          ]
+        },
+        {
+          "day": "Wednesday",
+          "slots": [
+            "10:00 AM",
+            "02:00 PM",
+            "04:00 PM"
+          ]
+        },
+        {
+          "day": "Friday",
+          "slots": [
+            "09:00 AM",
+            "10:00 AM",
+            "01:00 PM"
+          ]
+        }
+      ],
+      "createdAt": "2026-08-04T08:42:25.207Z"
+    },
+    {
+      "_id": "doc_6",
+      "userId": "usr_doctor_6",
+      "name": "Dr. James Thorne",
+      "email": "dr.thorne@bookadoctor.com",
+      "phone": "+1 (555) 789-0123",
+      "avatar": "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=400",
+      "specialization": "General Medicine",
+      "qualifications": "MBBS, MD - Yale School of Medicine",
+      "experienceYears": 15,
+      "consultationFee": 75,
+      "bio": "Primary care physician providing holistic healthcare, routine wellness checkups, chronic disease management, and preventative screening.",
+      "hospital": "Central City General Hospital",
+      "location": "Seattle, WA",
+      "rating": 4.75,
+      "reviewCount": 110,
+      "status": "pending",
+      "availability": [
+        {
+          "day": "Tuesday",
+          "slots": [
+            "09:00 AM",
+            "10:00 AM",
+            "11:00 AM",
+            "02:00 PM"
+          ]
+        },
+        {
+          "day": "Thursday",
+          "slots": [
+            "09:00 AM",
+            "10:00 AM",
+            "02:00 PM",
+            "04:00 PM"
+          ]
+        }
+      ],
+      "createdAt": "2026-08-04T08:42:25.207Z"
+    }
+  ],
+  "appointments": [
+    {
+      "_id": "apt_1",
+      "patientId": "usr_patient_1",
+      "doctorId": "doc_1",
+      "patientName": "John Doe",
+      "patientEmail": "john.doe@gmail.com",
+      "patientPhone": "+1 (555) 111-2233",
+      "doctorName": "Dr. Sarah Smith",
+      "doctorSpecialization": "Cardiology",
+      "doctorHospital": "St. Jude Heart & Vascular Institute",
+      "date": "2026-08-05",
+      "timeSlot": "10:00 AM",
+      "status": "confirmed",
+      "symptoms": "Experiencing mild chest tightness after exercise and elevated blood pressure readings.",
+      "consultationFee": 120,
+      "documents": [
+        {
+          "id": "doc_ref_1",
+          "name": "ECG_Report_July.pdf",
+          "fileUrl": "/uploads/sample-ecg.pdf",
+          "mimeType": "application/pdf",
+          "size": 1024500,
+          "uploadedAt": "2026-08-04T08:42:25.207Z",
+          "uploadedBy": "John Doe"
+        }
+      ],
+      "createdAt": "2026-08-04T08:42:25.207Z",
+      "updatedAt": "2026-08-04T08:42:25.207Z"
+    },
+    {
+      "_id": "apt_2",
+      "patientId": "usr_patient_2",
+      "doctorId": "doc_2",
+      "patientName": "Sarah Connor",
+      "patientEmail": "sarah.connor@gmail.com",
+      "patientPhone": "+1 (555) 999-8877",
+      "doctorName": "Dr. Rajesh Patel",
+      "doctorSpecialization": "Dermatology",
+      "doctorHospital": "Apex Skin & Cosmetic Center",
+      "date": "2026-08-04",
+      "timeSlot": "02:00 PM",
+      "status": "pending",
+      "symptoms": "Persistent skin rash on forearm with redness and swelling.",
+      "consultationFee": 95,
+      "documents": [],
+      "createdAt": "2026-08-04T08:42:25.207Z",
+      "updatedAt": "2026-08-04T08:42:25.207Z"
+    },
+    {
+      "_id": "apt_3",
+      "patientId": "usr_patient_1",
+      "doctorId": "doc_3",
+      "patientName": "John Doe",
+      "patientEmail": "john.doe@gmail.com",
+      "patientPhone": "+1 (555) 111-2233",
+      "doctorName": "Dr. Emily Chen",
+      "doctorSpecialization": "Neurology",
+      "doctorHospital": "Pacific Neuroscience Institute",
+      "date": "2026-07-15",
+      "timeSlot": "11:00 AM",
+      "status": "completed",
+      "symptoms": "Frequent migraine headaches with light sensitivity.",
+      "notes": "Prescribed preventative medication and recommended sleep cycle adjustment.",
+      "consultationFee": 150,
+      "documents": [],
+      "createdAt": "2026-08-04T08:42:25.207Z",
+      "updatedAt": "2026-08-04T08:42:25.207Z"
+    }
+  ],
+  "reviews": [
+    {
+      "_id": "rev_1",
+      "doctorId": "doc_1",
+      "patientId": "usr_patient_1",
+      "patientName": "John Doe",
+      "rating": 5,
+      "comment": "Dr. Smith was incredibly thorough and answered all my questions regarding my blood pressure concerns. Highly recommend!",
+      "date": "2026-07-20"
+    },
+    {
+      "_id": "rev_2",
+      "doctorId": "doc_2",
+      "patientId": "usr_patient_1",
+      "patientName": "Sarah Connor",
+      "rating": 5,
+      "comment": "Dr. Patel diagnosed my rash immediately and prescribed an effective treatment that cleared it in three days.",
+      "date": "2026-07-28"
+    }
+  ]
+}
