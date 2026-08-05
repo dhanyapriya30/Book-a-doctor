@@ -345,6 +345,14 @@ function validateRequest(req: Request, res: Response, next: NextFunction) {
   next();
 }
 
+function hasAppointmentAccess(req: AuthRequest, appointment: Appointment): boolean {
+  const isAdmin = req.user?.role === 'admin';
+  const isPatientOwner = req.user?.role === 'patient' && appointment.patientId === req.user._id;
+  const doctorProfile = db.doctors.find((d) => d.userId === req.user?._id);
+  const isDoctorOwner = req.user?.role === 'doctor' && doctorProfile?._id === appointment.doctorId;
+  return Boolean(isAdmin || isPatientOwner || isDoctorOwner);
+}
+
 // Create Express app
 const app = express();
 
@@ -873,9 +881,13 @@ app.post(
   upload.single('document'),
   async (req: AuthRequest, res: Response) => {
     try {
-      const apt = db.appointments.find((a) => a._id === req.params.id);
+          const apt = db.appointments.find((a) => a._id === req.params.id);
       if (!apt) {
         return res.status(404).json({ message: 'Appointment not found.' });
+      }
+
+      if (!hasAppointmentAccess(req, apt)) {
+        return res.status(403).json({ message: 'Unauthorized to modify documents for this appointment.' });
       }
 
       if (!req.file) {
@@ -914,6 +926,10 @@ app.delete(
     const apt = db.appointments.find((a) => a._id === req.params.id);
     if (!apt) {
       return res.status(404).json({ message: 'Appointment not found.' });
+    }
+
+    if (!hasAppointmentAccess(req, apt)) {
+      return res.status(403).json({ message: 'Unauthorized to modify documents for this appointment.' });
     }
 
     const docIndex = apt.documents.findIndex((d) => d.id === req.params.docId);
@@ -1285,7 +1301,7 @@ app.get('/api/postman-collection', (req: Request, res: Response) => {
 });
 
 // Start Express Server + Vite Integration
-async function startServer() {
+async function startServer(startPort = PORT) {
   if (process.env.NODE_ENV !== 'production') {
     const vite = await createViteServer({
       server: { middlewareMode: true },
@@ -1300,8 +1316,25 @@ async function startServer() {
     });
   }
 
-  app.listen(PORT, HOST, () => {
-    console.log(`Healthcare Server running on http://${HOST}:${PORT}`);
+  const server = app.listen(startPort, HOST, () => {
+    console.log(`Healthcare Server running on http://${HOST}:${startPort}`);
+  });
+
+  server.on('error', (error: any) => {
+    if (error?.code === 'EADDRINUSE') {
+      const fallbackPort = startPort + 1;
+      console.warn(`Port ${startPort} is already in use. Trying ${fallbackPort}...`);
+      if (fallbackPort <= startPort + 3) {
+        startServer(fallbackPort);
+      } else {
+        console.error(`Unable to start server. Please free port ${startPort} or set PORT to a free port.`);
+        process.exit(1);
+      }
+      return;
+    }
+
+    console.error('Server failed to start:', error);
+    process.exit(1);
   });
 }
 
