@@ -187,28 +187,24 @@ export async function saveToMongo(data: DBData): Promise<void> {
   }
 
   try {
-    await Promise.all([
-      UserModel.deleteMany({}),
-      DoctorModel.deleteMany({}),
-      AppointmentModel.deleteMany({}),
-      ReviewModel.deleteMany({}),
-      PasswordModel.deleteMany({}),
-    ]);
+    await UserModel.deleteMany({});
+    await DoctorModel.deleteMany({});
+    await AppointmentModel.deleteMany({});
+    await ReviewModel.deleteMany({});
+    await PasswordModel.deleteMany({});
 
-    await Promise.all([
-      UserModel.insertMany(
-        data.users.map((user) => ({ ...user, passwordHash: undefined }))
-      ),
-      DoctorModel.insertMany(data.doctors),
-      AppointmentModel.insertMany(data.appointments),
-      ReviewModel.insertMany(data.reviews),
-      PasswordModel.insertMany(
-        Object.entries(data.passwords).map(([userId, hashedPassword]) => ({
-          userId,
-          hashedPassword,
-        }))
-      ),
-    ]);
+    await UserModel.insertMany(
+      data.users.map((user) => ({ ...user, passwordHash: undefined }))
+    );
+    await DoctorModel.insertMany(data.doctors);
+    await AppointmentModel.insertMany(data.appointments);
+    await ReviewModel.insertMany(data.reviews);
+    await PasswordModel.insertMany(
+      Object.entries(data.passwords).map(([userId, hashedPassword]) => ({
+        userId,
+        hashedPassword,
+      }))
+    );
   } catch (error) {
     console.error('Failed to persist data to MongoDB.', error);
     throw error;

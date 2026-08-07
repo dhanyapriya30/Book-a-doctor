@@ -71,6 +71,16 @@ let db: DBData = {
   reviews: [],
 };
 
+function hasPersistedData(data: DBData): boolean {
+  return (
+    data.users.length > 0 ||
+    Object.keys(data.passwords).length > 0 ||
+    data.doctors.length > 0 ||
+    data.appointments.length > 0 ||
+    data.reviews.length > 0
+  );
+}
+
 // Data persistence helper functions
 async function loadDatabase(): Promise<void> {
   try {
@@ -78,9 +88,16 @@ async function loadDatabase(): Promise<void> {
       const connected = await connectDatabase();
       if (connected) {
         const mongoData = await loadFromMongo();
-        if (mongoData) {
+        if (mongoData && hasPersistedData(mongoData)) {
           db = mongoData;
           console.log('Database loaded successfully from MongoDB.');
+          return;
+        }
+
+        if (mongoData) {
+          console.log('MongoDB connection successful but no data was found. Seeding initial records.');
+          seedDatabase();
+          await saveDatabase();
           return;
         }
       }
